@@ -47,17 +47,17 @@ namespace RentApartment
 
         private void Menu0_Click(object sender, MouseButtonEventArgs e)
         {
-            SelectItemAction?.Invoke(ScreenIndex.DatabaseScreen);
+            SelectItemAction?.Invoke(ScreenIndex.AppartmentScreen);
         }
 
         private void Menu1_Click(object sender, MouseButtonEventArgs e)
         {
-            SelectItemAction?.Invoke(ScreenIndex.DatabaseScreen);
+            SelectItemAction?.Invoke(ScreenIndex.AppartmentScreen);
         }
 
         private void Menu2_Click(object sender, MouseButtonEventArgs e)
         {
-            SelectItemAction?.Invoke(ScreenIndex.DatabaseScreen);
+            SelectItemAction?.Invoke(ScreenIndex.AppartmentScreen);
         }
 
         private void Menu3_Click(object sender, MouseButtonEventArgs e)

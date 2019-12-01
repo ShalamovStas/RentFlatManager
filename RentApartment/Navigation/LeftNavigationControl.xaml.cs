@@ -42,7 +42,7 @@ namespace RentApartment
 
         private void Menu1_Click(object sender, MouseButtonEventArgs e)
         {
-            SelectItemAction?.Invoke(ScreenIndex.DatabaseScreen);
+            SelectItemAction?.Invoke(ScreenIndex.AppartmentScreen);
         }
 
         private void Item_0_MouseEnter(object sender, MouseEventArgs e)

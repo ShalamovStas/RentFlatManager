@@ -10,25 +10,28 @@ namespace Console1
 {
     class Program
     {
+        private static int count = 1000;
         static void Main(string[] args)
         {
-            var items = new List<Item>(1000000);
-            for (int i = 0; i < 1000000; i++)
+            string tempFolder = Path.GetDirectoryName(Environment.GetFolderPath(Environment.SpecialFolder.Desktop)) + @"\Documents\RentFlatData\";
+            string dbFileName = "UserTable.txt";
+            string fullDBFilePath = tempFolder + "\\" + dbFileName;
+
+            var items = new List<User>(count);
+            for (int i = 0; i < count; i++)
             {
-                var item = new Item()
+                var user = new User()
                 {
-                    Id = Guid.NewGuid().ToString(),
-                    Name = $"UserName_{i}" + new string('a', 100),
-                    Adress = $"UserAdress_{i}" + new string('a', 100),
-                    Info = $"Info_{i}" + new string('a', 100),
-                    Images = "Images_" + new string('a', 100)
+                    Guid = Guid.NewGuid(),
+                    UserName = $"UserName_{i}",
+                    Adress = $"UserAdress_{i}",
                 };
-                items.Add(item);
+                items.Add(user);
             }
 
             string text = JsonConvert.SerializeObject(items);
 
-            File.WriteAllText("RentFlatDB.txt", text);
+            File.WriteAllText(fullDBFilePath, text);
 
         }
     }
@@ -42,5 +45,12 @@ namespace Console1
         public string Info { get; set; }
         public string Images { get; set; }
 
+    }
+
+    public class User
+    {
+        public Guid Guid { get; set; }
+        public string UserName { get; set; }
+        public string Adress { get; set; }
     }
 }

@@ -86,6 +86,7 @@
       <DependentUpon>DatabaseScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\AppConstants.cs" />
+    <Compile Include="Models\Models.cs" />
     <Compile Include="Navigation\LeftNavigationControl.xaml.cs">
       <DependentUpon>LeftNavigationControl.xaml</DependentUpon>
     </Compile>
@@ -95,6 +96,8 @@
     <Compile Include="Navigation\StartControl.xaml.cs">
       <DependentUpon>StartControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ApplicationStartup.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
     <Page Include="DataBaseScreen\DatabaseScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

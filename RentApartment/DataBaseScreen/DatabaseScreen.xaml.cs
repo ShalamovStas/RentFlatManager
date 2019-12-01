@@ -1,6 +1,7 @@
 ﻿using MaterialDesignThemes.Wpf;
 using Newtonsoft.Json;
 using RentApartment.Models;
+using RentApartment.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -24,18 +25,14 @@ namespace RentApartment.DataBaseScreen
     /// </summary>
     public partial class DatabaseScreen : UserControl
     {
-        private ApplicationContext applicationContext;
-        public IEnumerable<User> UserList { get; private set; }
+        private IUserRepository _userRepository;
+        public IEnumerable<User> UsersList { get; private set; }
         public DatabaseScreen()
         {
             InitializeComponent();
+            _userRepository = new UserRepository();
             Load();
-            if (UserList == null && UserList.Count() == 0)
-                return;
-            foreach (var user in UserList)
-            {
-                AddRow(user);
-            }
+            
         }
 
         private void AddRow(User user)
@@ -82,12 +79,15 @@ namespace RentApartment.DataBaseScreen
             throw new NotImplementedException();
         }
 
-        private void Load()
+        private async void Load()
         {
-            using (applicationContext = new ApplicationContext())
+            UsersList = await _userRepository.GetUsersAsyncFromFile();
+            if (UsersList == null && UsersList.Count() == 0)
+                return;
+            var first10Users = UsersList.Take(10);
+            foreach (var user in first10Users)
             {
-                applicationContext.Users.LoadAsync();
-                UserList = applicationContext.Users.Local;
+                AddRow(user);
             }
         }
 

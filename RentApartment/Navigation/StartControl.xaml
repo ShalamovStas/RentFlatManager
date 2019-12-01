@@ -40,8 +40,8 @@
                     <!--<Grid.Background>
                         <SolidColorBrush Color="White" Opacity="0.1"/>
                     </Grid.Background>-->
-                    <TextBlock Text="Все записи" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" FontSize="18" Foreground="White" />
-                    <materialDesign:PackIcon Height="60" Width="60" Kind="Database" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="0 0 0 0" Foreground="White" />
+                    <TextBlock Text="Апартаменты" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" FontSize="18" Foreground="White" />
+                    <materialDesign:PackIcon Height="60" Width="60" Kind="HouseCity" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="0 0 0 0" Foreground="White" />
                 </Grid>
 
 
@@ -50,16 +50,16 @@
                     <!--<Grid.Background>
                         <SolidColorBrush Color="White" Opacity="0.1"/>
                     </Grid.Background>-->
-                    <TextBlock Text="Найти" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" FontSize="18" Foreground="White" />
-                    <materialDesign:PackIcon Height="60" Width="60" Kind="FindInPage" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="0 0 0 0" Foreground="White" />
+                    <TextBlock Text="Арендаторы" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" FontSize="18" Foreground="White" />
+                    <materialDesign:PackIcon Height="60" Width="60" Kind="Users" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="0 0 0 0" Foreground="White" />
                 </Grid>
 
                 <Grid x:Name="Item_2" Grid.Row="1" Grid.Column="2" Width="200"  Height="200" MouseLeftButtonDown="Menu2_Click" MouseEnter="Item_0_MouseEnter" MouseLeave="Item_0_MouseLeave" Margin="5">
                     <!--<Grid.Background>
                         <SolidColorBrush Color="White" Opacity="0.1"/>
                     </Grid.Background>-->
-                    <TextBlock Text="Новая запись" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" FontSize="18" Foreground="White" />
-                    <materialDesign:PackIcon Height="60" Width="60" Kind="AddBox" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="0 0 0 0" Foreground="White" />
+                    <TextBlock Text="Аренда" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" FontSize="18" Foreground="White" />
+                    <materialDesign:PackIcon Height="60" Width="60" Kind="UserBadge" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="0 0 0 0" Foreground="White" />
                 </Grid>
 
                 <Grid x:Name="Item_3" Grid.Row="2" Grid.ColumnSpan="3" Width="200"  Height="200" MouseLeftButtonDown="Menu3_Click" MouseEnter="Item_0_MouseEnter" MouseLeave="Item_0_MouseLeave" Margin="5">

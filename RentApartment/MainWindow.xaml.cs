@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using RentApartment.DataBaseScreen;
 using RentApartment.Models;
+using RentApartment.Repositories;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -34,6 +35,10 @@ namespace RentApartment
         {
             InitializeComponent();
             HideLeftPanel();
+            ApplicationStartup applicationStartup = new ApplicationStartup();
+            applicationStartup.Run();
+
+
             startControl = new StartControl(MainNavigationHendler);
             leftNavigationControl = new LeftNavigationControl(MainNavigationHendler);
             Column0.Children.Add(leftNavigationControl);
@@ -87,7 +92,7 @@ namespace RentApartment
                     ShowMainScreen();
                     
                     break;
-                case ScreenIndex.DatabaseScreen:
+                case ScreenIndex.AppartmentScreen:
                     ShowDatabaseScreen();
 
                     break;
