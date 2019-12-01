@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using RentApartment.DataBaseScreen;
 using RentApartment.Models;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace RentApartment
 {
     /// <summary>
@@ -25,16 +27,27 @@ namespace RentApartment
     public partial class MainWindow : Window
     {
         public string Message { get; set; }
+
+        public StartControl startControl { get; private set; }
+        public LeftNavigationControl leftNavigationControl { get; private set; }
         public MainWindow()
         {
             InitializeComponent();
-            StartControl startControl = new StartControl();
-            Container.Children.Add(startControl);
-            startControl.Label.Text = "Loading";
+            HideLeftPanel();
+            startControl = new StartControl(MainNavigationHendler);
+            leftNavigationControl = new LeftNavigationControl(MainNavigationHendler);
+            Column0.Children.Add(leftNavigationControl);
+            Column1.Children.Add(startControl);
+        }
 
-            new Thread(() => LoadDB(startControl)).Start();
+        private void HideLeftPanel()
+        {
+            MainColumn0.Width = new GridLength(0);
+        }
 
-            
+        private void ShowLeftPanel()
+        {
+            MainColumn0.Width = new GridLength(400);
         }
 
         private void LoadDB(StartControl startControl)
@@ -54,27 +67,46 @@ namespace RentApartment
 
             using (StreamReader reader = new StreamReader(fullDBFilePath))
             {
-                Dispatcher.Invoke(() =>
-                {
-                    startControl.Label.Text = "File in process";
-                });
+
                 string data = reader.ReadToEnd();
-                Dispatcher.Invoke(() =>
-                {
-                    startControl.Label.Text = "Data parcing";
-                });
+
                 if (data != null)
                 {
                     List<Item> items = JsonConvert.DeserializeObject<List<Item>>(data);
                     Message = items.Last<Item>().Name;
                 }
 
-                Dispatcher.Invoke(() =>
-                {
-                    startControl.Label.Text = "Loaded";
-                });
-
             }
+        }
+
+        private void MainNavigationHendler(ScreenIndex index)
+        {
+            switch (index)
+            {
+                case ScreenIndex.MainScreen:
+                    ShowMainScreen();
+                    
+                    break;
+                case ScreenIndex.DatabaseScreen:
+                    ShowDatabaseScreen();
+
+                    break;
+            }
+        }
+
+        private void ShowDatabaseScreen()
+        {
+            Column1.Children.Clear();
+            ShowLeftPanel();
+            DatabaseScreen databaseScreen = new DatabaseScreen();
+            Column1.Children.Add(databaseScreen);
+        }
+
+        private void ShowMainScreen()
+        {
+            HideLeftPanel();
+            Column1.Children.Clear();
+            Column1.Children.Add(startControl);
         }
     }
 }
