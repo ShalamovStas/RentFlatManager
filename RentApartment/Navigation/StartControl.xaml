@@ -27,6 +27,7 @@
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -68,6 +69,14 @@
                     </Grid.Background>-->
                     <TextBlock Text="Выход" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" FontSize="18" Foreground="White" />
                     <materialDesign:PackIcon Height="60" Width="60" Kind="ExitRun" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="0 0 0 0" Foreground="White" />
+                </Grid>
+
+                <Grid x:Name="Item_4" Grid.Row="3" Grid.ColumnSpan="3" Width="200"  Height="200" MouseLeftButtonDown="Menu4_Click" MouseEnter="Item_0_MouseEnter" MouseLeave="Item_0_MouseLeave" Margin="5">
+                    <!--<Grid.Background>
+                        <SolidColorBrush Color="White" Opacity="0.1"/>
+                    </Grid.Background>-->
+                    <TextBlock Text="Тест" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" FontSize="18" Foreground="White" />
+                    <materialDesign:PackIcon Height="60" Width="60" Kind="Book" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="0 0 0 0" Foreground="White" />
                 </Grid>
             </Grid>
         </StackPanel>

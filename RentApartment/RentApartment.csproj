@@ -98,6 +98,9 @@
     </Compile>
     <Compile Include="ApplicationStartup.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Test\Test1Control.xaml.cs">
+      <DependentUpon>Test1Control.xaml</DependentUpon>
+    </Compile>
     <Page Include="DataBaseScreen\DatabaseScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -123,6 +126,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resources\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Test\Resource1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Test\Test1Control.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

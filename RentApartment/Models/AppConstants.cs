@@ -13,7 +13,8 @@ namespace RentApartment.Models
         AppartmentScreen,
         RenersScreen,
         RentListScreen,
-        Exit
+        Exit,
+        Test
     }
 
     public class AppConstants

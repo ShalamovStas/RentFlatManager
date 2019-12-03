@@ -60,6 +60,12 @@ namespace RentApartment
             SelectItemAction?.Invoke(ScreenIndex.AppartmentScreen);
         }
 
+        private void Menu4_Click(object sender, MouseButtonEventArgs e)
+        {
+            SelectItemAction?.Invoke(ScreenIndex.Test);
+
+        }
+
         private void Menu3_Click(object sender, MouseButtonEventArgs e)
         {
             Application.Current.Shutdown();

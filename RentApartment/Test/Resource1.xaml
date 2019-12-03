@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:RentApartment.Test">
+
+    <ControlTemplate x:Key="TestListItems" TargetType="ListBoxItem">
+        <Grid>
+            <TextBlock>ControlTemplate</TextBlock>
+            <TextBlock Text="{Binding Path=Message}"></TextBlock>
+
+        </Grid>
+    </ControlTemplate>
+
+</ResourceDictionary>

@@ -2,6 +2,7 @@
 using RentApartment.DataBaseScreen;
 using RentApartment.Models;
 using RentApartment.Repositories;
+using RentApartment.Test;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -90,13 +91,30 @@ namespace RentApartment
             {
                 case ScreenIndex.MainScreen:
                     ShowMainScreen();
-                    
+
                     break;
                 case ScreenIndex.AppartmentScreen:
                     ShowDatabaseScreen();
 
                     break;
+                case ScreenIndex.RenersScreen:
+                    break;
+                case ScreenIndex.RentListScreen:
+                    break;
+                case ScreenIndex.Exit:
+                    break;
+                case ScreenIndex.Test:
+                    ShowTestScreen();
+                    break;
             }
+        }
+
+        private void ShowTestScreen()
+        {
+            Column1.Children.Clear();
+            HideLeftPanel();
+            Test1Control testScreen = new Test1Control();
+            Column1.Children.Add(testScreen);
         }
 
         private void ShowDatabaseScreen()
